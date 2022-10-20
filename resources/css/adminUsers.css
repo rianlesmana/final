@@ -95,6 +95,7 @@
     border: none;
     font-family: 'Poppins';
     font-size: medium;
+    background-color: none;
 }
 
 .card-item select {
