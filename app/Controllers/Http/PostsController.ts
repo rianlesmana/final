@@ -134,6 +134,13 @@ export default class PostsController {
         return response.redirect('/dashboard/admin')
 
     }
+
+    public async deleteUser ({ params, response }: HttpContextContract) {
+        const id = params.id
+        const user = await User.findOrFail(id)
+        await user.delete()
+        return response.redirect('/dashboard/admin/users')
+    }
 }
 
 

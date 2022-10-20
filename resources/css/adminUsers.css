@@ -138,6 +138,17 @@
     border-radius: 5px;
 }
 
+.confirm-delete {
+    text-align: center;
+    background-color: #c50000;
+    font-weight: bold;
+    font-family: 'Poppins';
+    color: #fff;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
 .price {
     font-weight: bold;
     font-size: larger;
