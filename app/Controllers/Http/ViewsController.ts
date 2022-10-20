@@ -115,7 +115,8 @@ export default class ViewsController {
     }
 
     public async report ({ view, auth }: HttpContextContract) {
-        await auth.use('web').authenticate()
-        return view.render('user/report')
+        const user = await auth.use('web').authenticate()
+
+        return view.render('user/report', { user: user })
     }
 }
