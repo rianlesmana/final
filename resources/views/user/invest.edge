@@ -1,0 +1,131 @@
+@layout('layouts/main')
+
+@set('title', 'Investasi - Rumah Sampah Digital')
+
+@section('src')
+    <link rel="stylesheet" href="{{ asset('assets/css/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/invest.css') }}">
+    <script src="https://kit.fontawesome.com/fa65046c58.js" crossorigin="anonymous"></script>
+@end
+
+@section('body')
+	@!component('components/sidebar', {
+        listA: 'nav-list',
+        listB: 'nav-list',
+        listC: 'nav-list-active',
+        listD: 'nav-list',
+        listE: 'nav-list',
+        listF: 'nav-list',
+    })
+
+    <div class="bg-main">
+        <img src="{{ asset('assets/images/profile-background.jpg') }}" alt="BG-Dashboard">
+    </div>
+    <header>
+        <div class="container">
+            {{-- Header --}}
+            <div class="head-top">
+                <div class="head-title-container">
+                    <div class="head-pages">
+                        <p>User / Dashboard / Investasi</p>
+                    </div>
+                    <div class="head-title">
+                        <h1>Investasi</h1>
+                    </div>
+                </div>
+                <div class="head-menu-toggle">
+                    <a href="#" onclick="onClick()">
+                        <i class="fas fa-bars fa-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="head-card-container">
+                <div class="head-card">
+                    <div class="head-card-top">
+                        <div class="head-card-text">
+                            <p>POINT DIMILIKI</p>
+                            <h2>{{ user.count }} Poin</h2>
+                        </div>
+                        <div class="head-card-icon-a">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="head-card-bottom">
+                        <p>Tingkatkan Intesasti</p>
+                    </div>
+                </div>
+                <div class="head-card">
+                    <div class="head-card-top">
+                        <div class="head-card-text">
+                            <p>KONVERSI IDR</p>
+                            <h2>Rp. {{ idr }}</h2>
+                        </div>
+                        <div class="head-card-icon-b">
+                            <i class="fa-solid fa-cash-register"></i>
+                        </div>
+                    </div>
+                    <div class="head-card-bottom">
+                        <p>Tukarkan Poin</p>
+                    </div>
+                </div>
+                <div class="head-card">
+                    <div class="head-card-top">
+                        <div class="head-card-text">
+                            <p>INVESTASI</p>
+                            <h2>{{ user.count }} Kg</h2>
+                        </div>
+                        <div class="head-card-icon-c">
+                            <i class="fa-sharp fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                    <div class="head-card-bottom">
+                        <p>Tingkatkan Investasi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="invest-container">
+                <div class="invest-left">
+                    <h2>Tukarkan Poin Anda ke Uang Tunai!</h2>
+                    <span><p>Anda dapat menukarkan point anda kedalam uang tunai dengan seminimalnya menukarkan 10 dn dari point di rekening anda!</p></span>
+                    <h1>1 Poin = Rp. 1000,-</h1>
+                    <span><h2>Berapa banyak poin yang ingin anda tukarkan?</h2></span>
+                    <div class="invest-form-grup">
+                        <form action="/activity" method="POST">
+                            <div class="invest-form-input">
+                                <input type="text" name="price">
+                            </div>
+                            <button type="submit">Kirim Permintaan</button>
+                        </form>
+                    </div>
+                    <p><i>Catatan: <q>Segera konfirmasi ke petugas rumah sampah digital setelah mengirim pengajuan melalui website ini!</q></i></p>
+                </div>
+                <div class="invest-right">
+                    <h2>Alternatif penukaran lain :</h2>
+                    <p>Point dapat ditukarkan ke beberapa wallet seperti :</p>
+                    <ul>
+                        <li>Dana</li>
+                        <li>OVO</li>
+                        <li>Gopay</li>
+                        <li>ShopeePay</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function onClick() {
+            let x = document.getElementById('nav').style;
+            if ( x.left != "0px") {
+                x.left = "0px";
+            } else {
+                x.left = "-330px";
+            }
+        }
+    </script>
+@end

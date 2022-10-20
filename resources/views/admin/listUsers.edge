@@ -1,0 +1,105 @@
+@layout('layouts/main')
+@set('title', 'Admin - Rumah Sampah Digital')
+
+@section('src')
+    <link rel="stylesheet" href="{{ asset('assets/css/admin_sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/adminUsers.css') }}">
+    <script src="https://kit.fontawesome.com/fa65046c58.js" crossorigin="anonymous"></script>
+@end
+
+@section('body')
+
+@!component('components/admin_sidebar', {
+    listA: 'nav-list',
+    listB: 'nav-list-active',
+    listC: 'nav-list',
+    listD: 'nav-list',
+    listE: 'nav-list',
+    listF: 'nav-list',
+})
+
+<div class="bg-main">
+    <img src="{{ asset('assets/images/profile-background.jpg') }}" alt="BG-Dashboard">
+</div>
+<header>
+    <div class="container">
+        {{-- Header --}}
+        <div class="head-top">
+            <div class="head-title-container">
+                <div class="head-pages">
+                    <p>Admin / Dashboard / Users</p>
+                </div>
+                <div class="head-title">
+                    <h1>Daftar Nama Pengguna</h1>
+                </div>
+            </div>
+            <div class="head-menu-toggle">
+                <a href="#" onclick="onClick()">
+                    <i class="fas fa-bars fa-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <article>
+            <div class="left-article">
+                <h3>Aktivitas Terbaru Saat ini!</h3>
+                <div class="search-column">
+                    <form>
+                        <input type="text" name="username" placeholder="Cari username">
+                        <button>Cari</button>
+                    </form>
+                </div>
+                <div class="alert">
+                    <p>Daftar semua member Rumah Sampah Digital!</p>
+                </div>
+                @if (flashMessages.get('success'))
+                    <div class="login-alert">
+                        <p>{{ flashMessages.get('success') }}</p>
+                    </div>
+                @end
+                <div class="card-container">
+                    @each (user in user)
+                        <div class="card-user">
+                            <form action="/admin/update/{{ user.id }}" method="POST">
+                                <div class="card-item">
+                                    <input type="text" value="{{ user.username }}" name="username">
+                                    <p>ID : {{ user.id }}</p>
+                                    <p>Point : {{ user.count }}</p>
+                                    <p>Tambah Point : <input type="text" name="count" placeholder="Tambahan Poin" value="0"></p>
+                                </div>
+                                <div class="card-item">
+                                    <input type="text" value="{{ user.fullName }}" name="name">
+                                    <input type="text" name="phoneNumber" value="{{ user.phoneNumber }}">
+                                    <input type="text" name="address" value="{{ user.address }}">
+                                </div>
+                                <div class="card-item">
+                                    <p>Authority :</p>
+                                    <input type="text" value="{{ user.authority }}" name="authority">
+                                </div>
+                                <div class="card-item">
+                                    <button class="confirm">Update Profile</button>
+                                </div>
+                            </form>
+                        </div>
+                    @end
+                </div>
+            </div>
+        </article>
+    </div>
+</main>
+
+<script>
+    function onClick() {
+        let x = document.getElementById('nav').style;
+        if ( x.left != "0px") {
+            x.left = "0px";
+        } else {
+            x.left = "-350px";
+        }
+    }
+</script>
+@end

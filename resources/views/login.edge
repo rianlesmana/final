@@ -1,0 +1,39 @@
+@layout('layouts/main')
+@set('title', 'Masuk - Rumah Sampah Digital')
+
+@section('src')
+    <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
+@end
+
+@section('body')
+    <main>
+        <img src="{{ asset('assets/images/bg-register.jpg') }}" alt="bg">
+        <div class="login-box">
+            <div class="login-logo">
+                <img src="{{ asset('assets/images/text-logo.png') }}" alt="logo">
+            </div>
+            <div class="login-title">
+                <h2>Masuk</h2>
+            </div>
+            @if (flashMessages.get('error'))
+                <div class="register-alert">
+                    <p>{{ flashMessages.get('error') }}</p>
+                </div>
+            @elseif (flashMessages.get('success'))
+                <div class="login-alert">
+                    <p>{{ flashMessages.get('success') }}</p>
+                </div>
+            @end
+            <div class="login-form">
+                <form action="/login" method="POST">
+                    <label for="username">Username :</label>
+                    <input type="text" name="username" placeholder="Masukan Username!">
+                    <label for="password">Password :</label>
+                    <input type="password" name="password" placeholder="Masukan Password!">
+                    <button type="submit">Masuk</button>
+                </form>
+                <p>Belum punya akun? <a href="/register">Daftar disini!</a></p>
+            </div>
+        </div>
+    </main>
+@end

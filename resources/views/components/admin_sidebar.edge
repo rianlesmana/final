@@ -1,0 +1,54 @@
+<nav id="nav" style="left: -350px">
+    <div id="nav-container">
+        <div class="nav-logo">
+            <a href="/user/dashboard">
+                <img src="{{ asset('assets/images/text-logo.png') }}" alt="Rumah Sampah Digital">
+            </a>
+        </div>
+
+        <div class="nav-menu">
+            <div class="{{ listA }}">
+                <a href="/dashboard/admin">
+                    <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+                    <p>Aktivitas Terbaru</p>
+                </a>
+            </div>
+
+            <div class="{{ listB }}">
+                <a href="/dashboard/admin/users">
+                    <i class="fa-sharp fa-solid fa-users"></i>
+                    <p>Daftar Anggota</p>
+                </a>
+            </div>
+
+            <div class="{{ listC }}">
+                {{--  <a href="/dashboard/user/store">  --}}
+                <a href="#">
+                    <i class="fa-sharp fa-solid fa-shop"></i>
+                    <p>Daftar Barang</p>
+                </a>
+            </div>
+
+            <div class="{{ listD }}">
+                <a href="/dashboard/admin/reports">
+                    <i class="fa-sharp fa-solid fa-bell"></i>
+                    <p>Daftar Laporan</p>
+                </a>
+            </div>
+
+            <div class="{{ listE }}">
+                <a href="/dashboard/admin/profile">
+                    <i class="fa-sharp fa-solid fa-user"></i>
+                    <p>Profile</p>
+                </a>
+            </div>
+
+            <div class="nav-list">
+                <a href="/logout">
+                    <i class="fa-solid fa-power-off"></i>
+                    <p>Keluar!</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

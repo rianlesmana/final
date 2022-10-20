@@ -1,0 +1,134 @@
+@layout('layouts/main')
+
+@set('title', 'Profile - Rumah Sampah Digital')
+
+@section('src')
+    <link rel="stylesheet" href="{{ asset('assets/css/admin_sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
+    <script src="https://kit.fontawesome.com/fa65046c58.js" crossorigin="anonymous"></script>
+@end
+
+@section('body')
+	@!component('components/admin_sidebar', {
+        listA: 'nav-list',
+        listB: 'nav-list',
+        listC: 'nav-list',
+        listD: 'nav-list',
+        listE: 'nav-list-active',
+        listF: 'nav-list',
+    })
+    <div class="bg-main">
+        <img src="{{ asset('assets/images/profile-background.jpg') }}" alt="BG-Dashboard">
+    </div>
+    <header>
+        <div class="container">
+            <div class="head-top">
+                <div class="head-title-container">
+                    <div class="head-pages">
+                        <p>User / <a href="/user/dashboard">Dashboard</a> / Profile</p>
+                    </div>
+                    <div class="head-title">
+                        <h1>Profil Pengguna</h1>
+                    </div>
+                </div>
+                <div class="head-menu-toggle">
+                    <a href="#" onclick="onClick()">
+                        <i class="fas fa-bars fa-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+                <div class="prof-top-container">
+                    <div class="prof-top-left">
+                        <div class="prof-top-left-icon">
+                            <i class="fa-solid fa-user fa-xl"></i>
+                        </div>
+                        <div class="prof-left-ident">
+                            <p class="prof-username">{{ user.username }}</p>
+                            <p class="prof-id">ID: {{ user.id }}</p>
+                        </div>
+                    </div>
+                    <div class="prof-top-right">
+                        <ul>
+                            <li><a href="/dashboard/user"><i class="fa-sharp fa-solid fa-shop"></i>            Beranda</a></li>
+                            <li><a href="#"><i class="fa-sharp fa-solid fa-circle-exclamation"></i>          Pusat Bantuan </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="prof-main-container">
+                    <div class="prof-main-left">
+                        <div class="card-profile">
+                            <img src="{{ asset('assets/images/card-background.jpg') }}" alt="Bg-Image">
+                            <div class="card-profile-container">
+                                <div class="card-profile-icon">
+                                    <i class="fa-solid fa-user fa-2xl"></i>
+                                </div>
+                                <div class="card-profile-ident">
+                                    <h3>{{ user.fullName }}</h3>
+                                    <p>{{ user.birthDate.getDate() }} / {{ user.birthDate.getMonth() }} / {{ user.birthDate.getYear() }}</p>
+                                    <p>{{ user.address }}</p>
+                                </div>
+                                <div class="card-profile-status">
+                                    <p>{{ user.authority }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prof-main-right">
+                        <div class="prof-main-right-title">
+                            <h2>Profil Pengguna</h2>
+                            <p>Periksa data pribadi anda dan sesuaikan dengan KTP anda!</p>
+                        </div>
+                        <div class="prof-main-right-form">
+                            <form action="/admin/update/{{ user.id }}" method="POST">
+                                <label for="username">Username :</label>
+                                <input type="text" name="username" value="{{ user.username }}">
+
+                                <label for="password">Password :</label>
+                                <input type="password" name="password" value="{{ user.password }}">
+
+                                <label for="fullName">Nama Lengkap :</label>
+                                <input type="text" name="fullName" value="{{ user.fullName }}">
+
+                                <label for="birthDate">Tanggal Lahir :</label>
+                                <input type="date" name="birthDate">
+
+                                <label for="phoneNumber">No. Handphone :</label>
+                                <input type="text" name="phoneNumber" value="{{ user.phoneNumber }}">
+
+                                <label for="address">Alamat :</label>
+                                <input type="text" name="address" value="{{ user.address }}">
+
+                                <label for="about">Tentang Anda :</label>
+                                <input type="text" name="about" value="{{ user.about }}">
+
+                                <button type="submit">Perbarui Profile</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function onClick() {
+            let x = document.getElementById('nav').style;
+            if ( x.left != "0px") {
+                x.left = "0px";
+            } else {
+                x.left = "-350px";
+            }
+        }
+    </script>
+@end

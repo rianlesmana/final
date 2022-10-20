@@ -1,0 +1,132 @@
+
+.main-box {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 40px;
+    border-radius: 20px;
+}
+
+.main-profile {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-logo {
+    width: 80px;
+    height: 80px;
+    background-color: darkgreen;
+    font-size: 40px;
+    border-radius: 10em;
+    border: solid 5px #fff;
+    box-shadow: 0px 0px 2px #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-desc {
+    font-size: 22px;
+}
+
+.main-card-container {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-card-active {
+    background-color: #74EBD5;
+    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 66%);
+    width: 250px;
+    height: 180px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.main-card-active p {
+    text-align: center;
+    color: #fff;
+}
+
+.card-logo-active {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    margin-bottom: 10px;
+}
+
+.card-count {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.main-card {
+    width: 250px;
+    height: 180px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px rgb(206, 206, 206);
+}
+
+.main-card p {
+    text-align: center;
+    color: rgb(88, 88, 88);
+}
+
+.card-logo-1 {
+    width: 60px;
+    height: 60px;
+    background-color: darkgreen;
+    border-radius: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.card-logo-2 {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(223, 140, 52);
+    border-radius: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .main-card-container {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .profile-desc {
+        font-size: 15px;
+    }
+}

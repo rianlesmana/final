@@ -1,0 +1,260 @@
+@layout('layouts/main')
+@set('title', 'Rumah Sampah Digital')
+
+@section('src')
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+    <script src="https://kit.fontawesome.com/fa65046c58.js" crossorigin="anonymous"></script>
+@end
+
+@section('body')
+    {{-- Navbar --}}
+	<nav id="navbar">
+		<div class="nav-left">
+			<div class="nav-logo">
+				<a href="/">
+					<img src="{{ asset('assets/images/text-logo.png') }}" alt="rumah sampah">
+				</a>
+			</div>
+			<div class="nav-list">
+				<ul>
+					<li><a href="/">Beranda</a></li>
+					<li><a href="#information">Informasi</a></li>
+					<li><a href="#program">Program</a></li>
+					<li><a href="#contact">Kontak</a></li>
+					<div class="list-auth">
+						<li><a href="/user/dashboard">Masuk / Daftar</a></li>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="nav-right">
+			<a href="/login">Masuk / Daftar</a>
+			<div class="menu-togle">
+				<input type="checkbox">
+				<span class="line"></span>
+				<span class="line"></span>
+				<span class="line"></span>
+			</div>
+		</div>
+	</nav>
+	{{-- End Navbar --}}
+
+	{{-- Header --}}
+	<header>
+		<div class="head-background">
+			<img src="{{ asset('assets/images/bg-main.jpg') }}" alt="background">
+		</div>
+		<div class="head-title">
+			<h1>SELAMAT DATANG DI RUMAH SAMPAH DIGITAL BANTEN</h1>
+			<p><q> kita bersama-sama menciptakan lingkungan yang sehat dengan pengelolaan sampah yang bak dan teratur. Tunggu apa lagi, ayo bergabung bersama dengan Rumah Sampah Digital Banten.</q></p>
+			<a href="/register">Ayo Bergabung</a>
+		</div>
+	</header>
+	{{-- End Header --}}
+
+	<main>
+		<article>
+			<section class="main-article-1">
+				<div class="main-article-1-container">
+					<h2>Apa itu Rumah Sampah Digital?</h2>
+					<p><i><q>Sampah Digital merupakan aplikasi berbasis digital yang dikembangkan dengan tujuan untuk mengurangi pmbuangan sampah rumah tangga yang berpotensi merusak lingkungan. Melalui platform ini diharapkan dapat membantu mengedukasi masyarakat agar lebih peduli dengan lingkungan, salah satunya dengan tidak membuang sampah sembarangan.</q></i></p>
+				</div>
+			</section>
+
+			<section class="main-article-2">
+				<div class="main-article-2-container">
+					<div class="article-2-text">
+						<h2>Kenapa harus di Rumah Sampah Digital</h2>
+						<p>Rumah Sampah Digital memberikan akses yang mudah dan cepat, sehingga akan memberikan kesan investasi sampah yang menyenangkan.</p>
+					</div>
+					<div class="article-2-img">
+						<img src="{{ asset('assets/images/img-section2.png') }}" alt="article 2">
+					</div>
+				</div>
+			</section>
+
+			<section id="program" class="main-article-3">
+				<div class="main-article-3-container">
+					<div class="article-3-title">
+						<h2>Ada apa saja di Rumah Sampah Digital?</h2>
+						<p>Rumah sampah digital memiliki beberapa program yang dapat diikuti oleh setiap nasabahnya seperti :</p>
+					</div>
+					<div class="article-3-card-container">
+						{{-- Bank Sampah --}}
+						<div class="article-3-card">
+							<div class="article-3-card-icon">
+								<i class="fa-sharp fa-solid fa-building"></i>
+							</div>
+							<div class="article-3-card-desc">
+								<h3>Bank Sampah</h3>
+								<p>Pembentukan bank sampah berbasis digital dengan melakukan penimbangan dan pengangkutan sampah terpilah.</p>
+							</div>
+						</div>
+						{{-- Pilah Sampah --}}
+						<div class="article-3-card">
+							<div class="article-3-card-icon">
+								<i class="fa-sharp fa-solid fa-trash"></i>
+							</div>
+							<div class="article-3-card-desc">
+								<h3>Pilah Sampah</h3>
+								<p>Edukasi, pendampingan pemilahan sampah, pengelolaan sampah, dan pelatihan keterampilan untuk masyarakat.</p>
+							</div>
+						</div>
+						{{-- Waste Investment --}}
+						<div class="article-3-card">
+							<div class="article-3-card-icon">
+								<i class="fa-sharp fa-solid fa-book"></i>
+							</div>
+							<div class="article-3-card-desc">
+								<h3>Waste Investment</h3>
+								<p>Waste investment memuat informasi tabungan sampah yang telah diberikan oleh nasabar, serta dapat menukarkannya dengan uang tunai.</p>
+							</div>
+						</div>
+						{{-- Waste Mart --}}
+						<div class="article-3-card">
+							<div class="article-3-card-icon">
+								<i class="fa-sharp fa-solid fa-store"></i>
+							</div>
+							<div class="article-3-card-desc">
+								<h3>Waste Mart</h3>
+								<p>Waste mart sebagai tempat bagi nasabah untuk menukarkan tabungan miliknya dengan barang yang tersedia.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="information" class="main-article-4">
+				<div class="main-article-4-container">
+					<h2>Bagaimana Cara Bergabung dengan Rumah Sampah Digital?</h2>
+					<p>Untuk menjadi anggota atau member dari Rumah Sampah Digital cukup mengikuti langkah-langkah pendaftaran di bawah ini!</p>
+					<div class="article-4-content">
+						<div class="article-4-content-img">
+							<img src="{{ asset('assets/images/img-section4.png') }}" alt="Content 4">
+						</div>
+						<div class="article-4-content-text">
+							<h3>Cara bergabung dengan Rumah Sampah Digital:</h3>
+							<ol>
+								<li>Masuk ke menu pendaftaran melalui tombol Daftar/Masuk,</li>
+								<li>Isi form yang tersedia dengan data diri sesuai dengan yang tertera pada KTP,</li>
+								<li>Setelah semua data diri terisi, akan secara otomatis dibuatkan rekenin di Rumah Sampah Digital</li>
+								<li>Lakukan konfirmasi ke pengurus bank sampah untuk memvalidasi pendaftaran</li>
+								<li>Setelah mengikuti semua instruksi di atas, secara resmi ada telah menjadi nasabah di Rumah Sampah Digital</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="main-article-5-container">
+					<div class="article-5-title">
+						<h2>Data Bank Sampah Saat Ini!</h2>
+						<p><i>Berikut ini data terbaru yang termuat di dalam database Rumah Sampah Digital Banten!</i></p>
+					</div>
+					<div class="article-5-card-container">
+						<div class="article-5-card">
+							<h3>Jumlah Sampah Saat Ini</h3>
+							<p>9999</p>
+						</div>
+
+						<div class="article-5-card">
+							<h3>Jumlah Nasabah Saat Ini</h3>
+							<p>9999</p>
+						</div>
+
+						<div class="article-5-card">
+							<h3>Point yang Tersebar Saat Ini</h3>
+							<p>9999</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="main-article-6">
+				<div class="main-article-6-container">
+					<div class="article-6-title">
+						<h2>Beberapa Produk yang Dapat Ditukarkan di Rumah Sampah Digital!</h2>
+						<p><i> barang di bawah ini merupakan 3 contoh jenis sampah yang dapat ditukarkan kedalam point di Rumah Sampah Digital!</i></p>
+					</div>
+					<div class="article-6-card-container">
+						<div class="article-6-card">
+							<div class="article-6-card-top">
+								<h3>5.000,- / kg</h3>
+								<p>5 Point / kg</p>
+							</div>
+							<div class="article-6-card-center">
+								<p>Besi Bekas</p>
+							</div>
+							<div class="article-6-card-bottom">
+								<p><i><q>Sampah berupa besi bekas dapat ditukarkan menjadi point di rumah sampah digital yang nantinya dapat digunakan untuk berinvestasi di program waste investment di rumah sampah digital</q></i></p>
+							</div>
+						</div>
+
+						<div class="article-6-card">
+							<div class="article-6-card-top">
+								<h3>2.500,- / kg</h3>
+								<p>2.5 Point / kg</p>
+							</div>
+							<div class="article-6-card-center">
+								<p>Sampah Botol Pelastik</p>
+							</div>
+							<div class="article-6-card-bottom">
+								<p><i><q>Sampah botol dapat ditukarkan menjadi point di rumah sampah digital yang nantinya dapat digunakan untuk berinvestasi di program waste investment di rumah sampah digital</q></i></p>
+							</div>
+						</div>
+
+						<div class="article-6-card">
+							<div class="article-6-card-top">
+								<h3>1.500,- / kg</h3>
+								<p>1.5 Point / kg</p>
+							</div>
+							<div class="article-6-card-center">
+								<p>Kardus Bekas</p>
+							</div>
+							<div class="article-6-card-bottom">
+								<p><i><q>Sampah kardus bekas dapat ditukarkan menjadi point di rumah sampah digital yang nantinya dapat digunakan untuk berinvestasi di program waste investment di rumah sampah digital</q></i></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</article>
+	</main>
+
+	<footer id="contact">
+		<div class="foot-container">
+			<div class="foot-left">
+				<img src="{{ asset('assets/images/text-logo.png') }}" alt="Rumah Sampah Digital" width="200px">
+				<h3>Ayo bergabung dengan rumah sampah digital!</h3>
+			</div>
+			<div class="foot-center">
+				<h3>Kontak :</h3>
+				<p>Admin Rumah Sampah Digital</p>
+				<p>+62 877 7323 6094</p>
+				<p>admin@rumahsampah.id</p>
+				<p>Kota Serang - Provinsi Banten</p>
+			</div>
+			<div class="foot-right">
+				<h3>Kritik dan Saran!</h3>
+				<form action="/report" method="POST">
+					<div class="form-label">
+						<label for="name">Nama :</label>
+					</div>
+					<div class="form-input">
+						<input type="text" name="name">
+					</div>
+					<div class="form-label">
+						<label for="report">Kritik dan Saran :</label>
+					</div>
+					<div class="form-input">
+						<textarea name="report"></textarea>
+					</div>
+					<button type="submit">Kirim!</button>
+				</form>
+			</div>
+		</div>
+	</footer>
+
+	<script src="{{ asset('assets/js/index.js') }}"></script>
+@end

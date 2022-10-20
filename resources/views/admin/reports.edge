@@ -1,0 +1,90 @@
+@layout('layouts/main')
+@set('title', 'Admin - Rumah Sampah Digital')
+
+@section('src')
+    <link rel="stylesheet" href="{{ asset('assets/css/admin_sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/adminReports.css') }}">
+    <script src="https://kit.fontawesome.com/fa65046c58.js" crossorigin="anonymous"></script>
+@end
+
+@section('body')
+
+@!component('components/admin_sidebar', {
+    listA: 'nav-list',
+    listB: 'nav-list',
+    listC: 'nav-list',
+    listD: 'nav-list-active',
+    listE: 'nav-list',
+    listF: 'nav-list',
+})
+
+<div class="bg-main">
+    <img src="{{ asset('assets/images/profile-background.jpg') }}" alt="BG-Dashboard">
+</div>
+<header>
+    <div class="container">
+        {{-- Header --}}
+        <div class="head-top">
+            <div class="head-title-container">
+                <div class="head-pages">
+                    <p>Admin / Dashboard / Reports</p>
+                </div>
+                <div class="head-title">
+                    <h1>Daftar Laporan Pengguna</h1>
+                </div>
+            </div>
+            <div class="head-menu-toggle">
+                <a href="#" onclick="onClick()">
+                    <i class="fas fa-bars fa-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <article>
+            <div class="left-article">
+                <h3>Aktivitas Terbaru Saat ini!</h3>
+                <div class="search-column">
+                    <form>
+                        <input type="text" name="name" placeholder="Cari berdasarkan nama">
+                        <button>Cari</button>
+                    </form>
+                </div>
+                <div class="alert">
+                    <p>Daftar semua member Rumah Sampah Digital!</p>
+                </div>
+                <div class="card-container">
+                    @each (report in report)
+                        <div class="card-user">
+                            <div class="card-item">
+                                <div>
+                                    <p><b>{{ report.name }}</b></p>
+                                    <p>ID : {{ report.id }}</p>
+                                </div>
+                                <div>
+                                    <p><b>Laporan :</b></p>
+                                    <p>{{ report.report }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @end
+                </div>
+            </div>
+        </article>
+    </div>
+</main>
+
+<script>
+    function onClick() {
+        let x = document.getElementById('nav').style;
+        if ( x.left != "0px") {
+            x.left = "0px";
+        } else {
+            x.left = "-350px";
+        }
+    }
+</script>
+@end

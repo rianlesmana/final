@@ -1,0 +1,76 @@
+@layout('layouts/main')
+
+@set('title', 'Riwayat Transaksi - Rumah Sampah Digital')
+
+@section('src')
+    <link rel="stylesheet" href="{{ asset('assets/css/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/report.css') }}">
+    <script src="https://kit.fontawesome.com/fa65046c58.js" crossorigin="anonymous"></script>
+@end
+
+@section('body')
+	@!component('components/sidebar', {
+        listA: 'nav-list',
+        listB: 'nav-list',
+        listC: 'nav-list',
+        listD: 'nav-list',
+        listE: 'nav-list',
+        listF: 'nav-list-active',
+    })
+    <div class="bg-main">
+        <img src="{{ asset('assets/images/profile-background.jpg') }}" alt="BG-Dashboard">
+    </div>
+    <header>
+        <div class="container">
+            <div class="head-top">
+                <div class="head-title-container">
+                    <div class="head-pages">
+                        <p>User / <a href="/user/dashboard">Dashboard</a> / Laporan</p>
+                    </div>
+                    <div class="head-title">
+                        <h1>Kirim Laporan!</h1>
+                    </div>
+                </div>
+                <div class="head-menu-toggle">
+                    <a href="#" onclick="onClick()">
+                        <i class="fas fa-bars fa-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="report-container">
+                <h2>Kirimkan laporan atau keluhan anda di sini!</h2>
+                <form action="/report" method="POST">
+                    <div class="form-grup">
+                        <div class="form-label">
+                            <label for="name">Nama Lengkap :</label>
+                        </div>
+                        <input type="text" value="{{ user.fullName }}">
+                    </div>
+                    <div class="form-grup">
+                        <div class="form-label">
+                            <label for="report">Laporan / Keluhan :</label>
+                        </div>
+                        <textarea name="report"></textarea>
+                    </div>
+                    <button type="submit">Kirim Laporan</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function onClick() {
+            let x = document.getElementById('nav').style;
+            if ( x.left != "0px") {
+                x.left = "0px";
+            } else {
+                x.left = "-330px";
+            }
+        }
+    </script>
+@end

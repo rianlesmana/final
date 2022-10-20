@@ -1,0 +1,61 @@
+<nav id="nav" style="left: -330px">
+    <div id="nav-container">
+        <div class="nav-logo">
+            <a href="/user/dashboard">
+                <img src="{{ asset('assets/images/text-logo.png') }}" alt="Rumah Sampah Digital">
+            </a>
+        </div>
+
+        <div class="nav-menu">
+            <div class="{{ listA }}">
+                <a href="/dashboard/user">
+                    <i class="fa-solid fa-laptop"></i>
+                    <p>Dashboard</p>
+                </a>
+            </div>
+
+            <div class="{{ listB }}">
+                <a href="/dashboard/user/profile">
+                    <i class="fa-solid fa-user"></i>
+                    <p>Profile</p>
+                </a>
+            </div>
+
+            <div class="{{ listC }}">
+                <a href="/dashboard/user/invest">
+                    <i class="fa-solid fa-id-card"></i>
+                    <p>Investasi</p>
+                </a>
+            </div>
+
+            <div class="{{ listD }}">
+                {{--  <a href="/dashboard/user/store">  --}}
+                <a href="#">
+                    <i class="fa-solid fa-shop"></i>
+                    <p>Toko</p>
+                </a>
+            </div>
+
+            <div class="{{ listE }}">
+                <a href="/dashboard/user/activity">
+                    <i class="fa-solid fa-clock"></i>
+                    <p>Riwayat</p>
+                </a>
+            </div>
+
+            <div class="{{ listF }}">
+                <a href="/dashboard/user/report">
+                    <i class="fa-solid fa-house-signal"></i>
+                    <p>Laporan!</p>
+                </a>
+            </div>
+
+            <div class="nav-list">
+                <a href="/logout">
+                    <i class="fa-solid fa-power-off"></i>
+                    <p>Keluar!</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,245 @@
+.container {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    padding: 20px;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.bg-main {
+    position: absolute;
+    z-index: 0;
+}
+
+.bg-main img {
+    width: 100vw;
+    height: 500px;
+}
+
+.head-top {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.head-menu-toggle {
+    z-index: 20;
+    background-color: #7c7c7c41;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* ==================================================================== */
+
+.prof-top-container {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prof-top-left {
+    display: flex;
+    align-items: center;
+}
+
+.prof-top-left-icon {
+    background-color: #2ca049;
+    width: 60px;
+    height: 60px;
+    border-radius: 10em;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.prof-username {
+    font-weight: bold;
+    font-size: large;
+}
+
+.prof-top-right {
+    display: flex;
+    align-items: center;
+}
+
+.prof-top-right ul {
+    display: flex;
+    gap: 20px;
+    margin: 30px;
+}
+
+.prof-top-right ul li {
+    background-color: #fff;
+    box-shadow: 0 0 5px #7c7c7c;
+    padding: 5px;
+    border-radius: 10px;
+    color: #535353;
+}
+
+.prof-main-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card-profile {
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 5px #7c7c7c;
+    border-radius: 10px;
+}
+
+.card-profile img {
+    position: absolute;
+    z-index: 0;
+    width: 300px;
+    height: 150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-profile-icon {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    background-color: #2ca049;
+    border-radius: 10em;
+    border: solid 3px #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    
+}
+
+.card-profile-ident {
+    text-align: center;
+}
+
+.card-profile-container {
+    height: 100%;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-profile-status {
+    margin-top: 20px;
+    color: #ffae00;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.prof-main-right {
+    background-color: #fff;
+    box-shadow: 0 0 5px #7c7c7c;
+    width: 680px;
+    border-radius: 10px;
+}
+
+.prof-main-right-title {
+    padding: 20px;
+    text-align: center;
+}
+
+.prof-main-right-form {
+    padding: 20px;
+}
+
+.prof-main-right-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.prof-main-right-form input {
+    margin-bottom: 30px;
+    height: 25px;
+    font-family: 'Poppins';
+    border: none;
+    border-bottom: solid 1px #c8c8c8;
+    font-size: large;
+}
+
+.prof-main-right-form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.prof-main-right-form input:focus {
+    outline: none;
+}
+
+.prof-main-right-form button {
+    font-family: 'Poppins';
+    border: none;
+    height: 40px;
+    font-weight: bold;
+    background-color: #2ca049;
+    color: #fff;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 1024px ) {
+    .prof-main-right {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 950px ) {
+    .prof-main-right {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 850px ) {
+    .prof-main-right {
+        width: 400px;
+    }
+
+}
+
+@media screen and (max-width: 750px ) {
+    .prof-main-right {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 700px ) {
+    .prof-main-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 40px;
+    }
+
+    .prof-top-container {
+        flex-direction: column;
+        height: 200px;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 400px ) {
+    .prof-main-right {
+        width: 300px;
+    }
+
+    .prof-top-left-icon {
+        margin: 10px;
+    }
+}

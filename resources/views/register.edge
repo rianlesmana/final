@@ -1,0 +1,45 @@
+@layout('layouts/main')
+@set('title', 'Daftar - Rumah Sampah Digital')
+
+@section('src')
+    <link rel="stylesheet" href="{{ asset('assets/css/register.css') }}">
+@end
+
+@section('body')
+<main>
+    <img src="{{ asset('assets/images/bg-register.jpg') }}" alt="bg">
+    <div class="register-box">
+        <div class="register-logo">
+            <img src="{{ asset('assets/images/text-logo.png') }}" alt="logo">
+        </div>
+        <div class="register-title">
+            <h2>Daftar</h2>
+        </div>
+        @if (flashMessages.get('error'))
+        <div class="register-alert">
+            <p>{{ flashMessages.get('error') }}</p>
+        </div>
+        @end
+        <div class="register-form">
+            <form action="/register" method="POST">
+                <label for="username">Username :</label>
+                <input type="text" name="username" placeholder="Masukan Username!">
+                <label for="password">Password :</label>
+                <input type="password" name="password" placeholder="Masukan Password!">
+                <label for="fullName">Nama Lengkap :</label>
+                <input type="text" name="fullName" placeholder="Masukan nama lengkap anda!">
+                <label for="birthDate">Tanggal Lahir :</label>
+                <input type="date" name="birthDate">
+                <label for="phoneNumber">No. HP :</label>
+                <input type="text" name="phoneNumber" placeholder="Masukan nomor hp anda!">
+                <label for="address">Alamat :</label>
+                <input type="text" name="address" placeholder="Masukan alamat lengkap anda!">
+                <label for="about">About :</label>
+                <input type="text" name="about" placeholder="Masukan riwayat tentang anda!">
+                <button type="submit">Daftar</button>
+            </form>
+            <p>Sudah punya akun? <a href="/login">Masuk disini!</a></p>
+        </div>
+    </div>
+</main>
+@end

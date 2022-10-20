@@ -1,0 +1,144 @@
+@layout('layouts/main')
+
+@set('title', 'Dashboard - Rumah Sampah Digital')
+
+@section('src')
+    <link rel="stylesheet" href="{{ asset('assets/css/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/user.css') }}">
+    <script src="https://kit.fontawesome.com/fa65046c58.js" crossorigin="anonymous"></script>
+@end
+
+@section('body')
+	@!component('components/sidebar', {
+        listA: 'nav-list-active',
+        listB: 'nav-list',
+        listC: 'nav-list',
+        listD: 'nav-list',
+        listE: 'nav-list',
+        listF: 'nav-list',
+    })
+
+    <div class="bg-main">
+        <img src="{{ asset('assets/images/profile-background.jpg') }}" alt="BG-Dashboard">
+    </div>
+    <header>
+        <div class="container">
+            {{-- Header --}}
+            <div class="head-top">
+                <div class="head-title-container">
+                    <div class="head-pages">
+                        <p>User / Dashboard</p>
+                    </div>
+                    <div class="head-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+                <div class="head-menu-toggle">
+                    <a href="#" onclick="onClick()">
+                        <i class="fas fa-bars fa-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="head-user-box">
+                <p>Selamat datang di Rumah Sampah Digital Banten {{ user.fullName }}!</p>
+            </div>
+            <div class="head-card-container">
+                <div class="head-card">
+                    <div class="head-card-top">
+                        <div class="head-card-text">
+                            <p>POINT DIMILIKI</p>
+                            <h2>{{ user.count }} Poin</h2>
+                        </div>
+                        <div class="head-card-icon-a">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="head-card-bottom">
+                        <p>Tingkatkan Intesasti</p>
+                    </div>
+                </div>
+                <div class="head-card">
+                    <div class="head-card-top">
+                        <div class="head-card-text">
+                            <p>KONVERSI IDR</p>
+                            <h2>Rp. {{ idr }}</h2>
+                        </div>
+                        <div class="head-card-icon-b">
+                            <i class="fa-solid fa-cash-register"></i>
+                        </div>
+                    </div>
+                    <div class="head-card-bottom">
+                        <p>Tukarkan Poin</p>
+                    </div>
+                </div>
+                <div class="head-card">
+                    <div class="head-card-top">
+                        <div class="head-card-text">
+                            <p>INVESTASI</p>
+                            <h2>{{ user.count }} Kg</h2>
+                        </div>
+                        <div class="head-card-icon-c">
+                            <i class="fa-sharp fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                    <div class="head-card-bottom">
+                        <p>Tingkatkan Investasi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <article>
+                <div class="left-article">
+                    <h3>Rekomendasi sampah yang dapat ditukarkan!</h3>
+                    <div class="table-left-article">
+                        <table>
+                            <tr>
+                                <th>Nama Barang</th>
+                                <th style="width: 20%">Harga</th>
+                                <th style="width: 30%">Ket.</th>
+                            </tr>
+                            <tr>
+                                <td>Minyak Goreng</td>
+                                <td>10</td>
+                                <td>
+                                    /Kg
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="right-article">
+                    <h3>Riwayat Transaksi Terbaru</h3>
+                    <div class="table-right-article">
+                        <table style="width: 100%">
+                            <tr>
+                                <th>Nama Barang</th>
+                                <th style="width: 30%">Harga</th>
+                            </tr>
+                            @each(activity in activity)
+                                <tr class="table-row">
+                                    <td style="text-align:center">{{ activity.nameActivity }}</td>
+                                    <td style="text-align:center">{{ activity.totalPrice }}</td>
+                                </tr>
+                            @end
+                        </table>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <script>
+        function onClick() {
+            let x = document.getElementById('nav').style;
+            if ( x.left != "0px") {
+                x.left = "0px";
+            } else {
+                x.left = "-330px";
+            }
+        }
+    </script>
+@end

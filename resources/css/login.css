@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.login-box {
+    position: relative;
+    z-index: 1;
+    width: 400px;
+    height: 430px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.411) 7px 7px;
+}
+
+.login-logo {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-logo img {
+    width: 200px;
+    height: 70px;
+}
+
+.login-title {
+    color: rgb(52, 52, 52);
+    text-align: center;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-family: 'Poppins';
+    padding-left: 8px;
+}
+
+.login-form button {
+    height: 30px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    background-color: rgb(32, 132, 58);
+    color: #fff;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.715) 5px 5px;
+}
+
+.login-form p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-form a {
+    text-decoration: underline;
+}
+
+.login-alert {
+    height: 40px;
+    color: #fff;
+    background-color: rgba(32, 132, 59, 0.586);
+    border: solid 2px rgb(32, 132, 59);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.register-alert {
+    height: 40px;
+    color: #fff;
+    background-color: rgba(132, 32, 32, 0.586);
+    border: solid 2px rgb(132, 32, 32);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 425px) {
+    .login-box {
+        width: 280px;
+        height: 450px;
+    }
+
+    .login-box {
+        padding: 15px;
+    }
+}
