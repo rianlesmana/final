@@ -60,13 +60,16 @@
                     @each (report in report)
                         <div class="card-user">
                             <div class="card-item">
-                                <div>
+                                <div class="report-identity">
                                     <p><b>{{ report.name }}</b></p>
                                     <p>ID : {{ report.id }}</p>
                                 </div>
-                                <div>
+                                <div class="report-desc">
                                     <p><b>Laporan :</b></p>
                                     <p>{{ report.report }}</p>
+                                </div>
+                                <div class="report-button">
+                                    <a href="/reports/{{ report.id }}">Hapus</a>
                                 </div>
                             </div>
                         </div>

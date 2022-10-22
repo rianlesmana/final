@@ -79,6 +79,7 @@
 .card-item {
     padding: 10px;
     display: flex;
+    align-items: center;
     gap: 60px;
     border-bottom: solid 2px rgb(170, 170, 170);
 }
@@ -92,6 +93,21 @@
     color: #000;
 }
 
+.report-identity {
+    width: 20%;
+}
+
+.report-desc {
+    width: 60%;
+}
+
+.report-button a {
+    background-color: #950000;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+}
+
 @media screen and (max-width: 600px) {
     .search-column form button {
         width: 100%;
@@ -100,5 +116,14 @@
     .card-item {
         flex-direction: column;
         gap: 10px;
+        align-items: flex-start;
+    }
+
+    .report-identity {
+        width: 100%;
+    }
+    
+    .report-desc {
+        width: 100%;
     }
 }

@@ -135,6 +135,13 @@ export default class PostsController {
 
     }
 
+    public async deleteReport ({ params, response }: HttpContextContract) {
+        const id = params.id
+        const report = await Report.findOrFail(id);
+        await report.delete()
+        return response.redirect('/dashboard/admin/reports')
+    }
+
     public async deleteUser ({ params, response }: HttpContextContract) {
         const id = params.id
         const user = await User.findOrFail(id)
