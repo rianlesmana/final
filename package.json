@@ -37,5 +37,20 @@
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.21"
-  }
+  },
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rianlesmana/final.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rianlesmana/final/issues"
+  },
+  "homepage": "https://github.com/rianlesmana/final#readme",
+  "description": ""
 }
